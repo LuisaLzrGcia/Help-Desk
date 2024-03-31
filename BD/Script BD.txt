@@ -1,0 +1,40 @@
+-- Base de datos: helpdesk
+CREATE DATABASE IF NOT EXISTS helpdesk DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE helpdesk;
+
+-- Tabla para roles de usuario
+CREATE TABLE IF NOT EXISTS roles (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(50) NOT NULL,
+  descripcion VARCHAR(255)
+);
+
+-- Inserción de datos en la tabla roles
+INSERT INTO roles (nombre, descripcion) VALUES
+('cliente', 'Rol para clientes'),
+('admin', 'Rol para administradores');
+
+-- Tabla para información personal
+CREATE TABLE IF NOT EXISTS personas (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(100) NOT NULL,
+  apellido VARCHAR(100) NOT NULL,
+  fecha_nacimiento DATE NOT NULL,
+  sexo ENUM('M', 'F', 'O'),
+  telefono VARCHAR(20),
+  correo VARCHAR(100) UNIQUE NOT NULL,
+  fecha_insert TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tabla para usuarios
+CREATE TABLE IF NOT EXISTS usuarios (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  id_rol INT NOT NULL,
+  id_persona INT NOT NULL,
+  usuario VARCHAR(50) UNIQUE NOT NULL,
+  contrasena VARCHAR(255) NOT NULL,
+  ubicacion TEXT,
+  fecha_insert TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (id_rol) REFERENCES roles(id),
+  FOREIGN KEY (id_persona) REFERENCES personas(id)
+);

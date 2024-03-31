@@ -1,0 +1,3 @@
+git add .  # Agrega todos los cambios
+git commit -m "Mensaje de commit"  # Confirma los cambios con un mensaje descriptivo
+git push origin boni

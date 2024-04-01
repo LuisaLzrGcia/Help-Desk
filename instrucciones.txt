@@ -7,4 +7,5 @@ git push origin boni
 
 PARA TRAER CAMBIOS DEL REPOSITORIO REMOTO
 git fetch origin
+git fetch origin
 git pull origin boni

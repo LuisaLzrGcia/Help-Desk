@@ -4,7 +4,7 @@ if (session_status() != 2) {
 }// Datos de conexión a la base de datos
 $host = "localhost"; // Host de la base de datos
 $usuario = "root"; // Usuario de la base de datos
-$contrasena = "19081411"; // Contraseña de la base de datos
+$contrasena = ""; // Contraseña de la base de datos
 $base_de_datos = "helpdesk"; // Nombre de la base de datos
 
 // Intentar conectarse a la base de datos

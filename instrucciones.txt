@@ -1,3 +1,9 @@
+PARA SUBIR CAMBIOS
+#Verifica que la rama sea boni usando
+git branch
 git add .  # Agrega todos los cambios. 
 git commit -m "Mensaje de commit"  # Confirma los cambios con un mensaje descriptivo
 git push origin boni
+
+PARA TRAER CAMBIOS DEL REPOSITORIO REMOTO
+git pull origin boni

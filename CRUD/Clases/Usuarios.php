@@ -18,10 +18,10 @@ class Usuarios
             $datosUsuario = mysqli_fetch_array($respuesta);
             $_SESSION['usuario']['nombre'] = $datosUsuario['usuario'];
             $_SESSION['usuario']['id'] = $datosUsuario['id_usuario'];
-            $_SESSION['usuario']['rol'] = $datosUsuario['id_password'];
-            return 1;
+            $_SESSION['usuario']['rol'] = $datosUsuario['id_usuario'];
+            return true;
         } else {
-            return 0;
+            return false;
         }
     }
 }

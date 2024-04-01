@@ -18,7 +18,7 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
     //echo '<script>alert("hola")</script>';
 
     // Verificar si el inicio de sesión fue exitoso
-    if ($login_result == 1) {
+    if ($login_result) {
         // Redireccionar a inicio.php
         header("Location: ../vistas/inicio.php");
         exit; // Salir del script para evitar ejecución adicional

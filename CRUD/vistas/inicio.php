@@ -10,6 +10,7 @@ if (isset($_SESSION['usuario']['id']) && ($_SESSION['usuario']['id'] == 1 || $_S
   <link rel="stylesheet" href="../../public/CSS/menu.css" />
 
   <!-- Page Content -->
+  
   <div class="container">
     <div class="card border-0 shadow my-5">
       <div class="card-body p-5">

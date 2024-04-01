@@ -9,4 +9,7 @@ PARA TRAER CAMBIOS DEL REPOSITORIO REMOTO
 git fetch origin
 git pull origin boni
 
-Holi
+<!-- Mantener session activa -->
+if (session_status() !== PHP_SESSION_ACTIVE)
+  session_start();
+

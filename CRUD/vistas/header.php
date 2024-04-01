@@ -26,6 +26,11 @@ if (session_status() !== PHP_SESSION_ACTIVE)
           <li class="nav-item">
             <a class="nav-link" href="misReportes.php">Reportes</a>
           </li>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Editar Datos</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../Login/salir.php">Salir</a>
+          </div><!-- Se agregó el cierre del div para el menú desplegable -->
         <?php } else if ($_SESSION['usuario']['rol'] == 2) { ?>
             <!-- Vistas del Administrador-->
             <li class="nav-item">

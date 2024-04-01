@@ -20,6 +20,7 @@ if (session_status() !== PHP_SESSION_ACTIVE)
           <a class="nav-link" href="inicio.php">Inicio</a>
         </li>
         <?php if ($_SESSION['usuario']['rol'] == 1) { ?>
+          <!-- Vistas de Cliente-->
           <li class="nav-item">
             <a class="nav-link" href="misDispositivos.php">Mis dispositivos</a>
           </li>

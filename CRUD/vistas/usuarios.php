@@ -3,6 +3,8 @@
   if(isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] == 2) {
 ?>
 
+
+
 <!-- Page Content -->
 <div class="container">
   <div class="card border-0 shadow my-5">
@@ -17,6 +19,7 @@
       </p>
   </div>
 </div>
+
 
 <?php
   include "usuarios/modalAgregar.php";

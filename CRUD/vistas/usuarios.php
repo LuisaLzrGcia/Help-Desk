@@ -15,14 +15,16 @@
           Agregar Usuario
         </button>
         <hr>
-        <div id="tablaUsuariosLoad"></div>
+        <div id="tablaUsuariosLoad">
+        <hr>
+        </div>
       </p>
   </div>
 </div>
 
 
 <?php
-  include "usuarios/modalAgregar.php";
+  include "usuarios\modalAgregar.php";
   include "footer.php";
   ?>
   <script src="../public/js/usuarios/usuarios.js"></script>

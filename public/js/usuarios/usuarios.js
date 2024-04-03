@@ -1,8 +1,15 @@
-$(document).ready(function(){
-    $('#tablaUsuariosLoad').load("tablaUsuarios.php");
-});
+document.addEventListener("DOMContentLoaded", (event) => {
+    console.log("DOM fully loaded and parsed");
+  });
 
-function agregarUsuario(){
-    alert("Esta funcionando");
-    return false;
-}
+// $(document).ready(function(){
+//     $('#tablaUsuariosLoad').load("tablaUsuarios.php");
+// });
+
+// function agregarUsuario(){
+//     alert("Esta funcionando");
+//     return false;
+// }
+
+
+  

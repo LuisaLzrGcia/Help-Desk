@@ -1,0 +1,15 @@
+FUNCIONES AGREGADAS.
+
+En en archivo de tablaUsuarios.PHP se agrego una filtro/barra de busqueda 
+en la tabla con la cual se puede filtrar la busqueda dependiendo de los datos 
+que se ingresen.
+
+Se agrego la funcion de responsive en la tabla de tablaUsuarios con la cual se 
+se las opciones se oculten y estas apareceran despues de precionar un boton que las
+desplegara.
+
+NINGUNA SE MUESTRA EN PANTALLA :C
+
+FUNCIONES A AGREGAR.
+
+Se plantea agregar el funciomiento de los botones de tablaUsuarios

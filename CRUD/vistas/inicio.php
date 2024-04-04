@@ -17,9 +17,9 @@ if (isset($_SESSION['usuario']['id']) && ($_SESSION['usuario']['id'] == 1 || $_S
     </div>
   </div>
 
-  <?php 
-  include "footer.php"; 
-  } else {
-    header("location:../index.html");
-  }
+  <?php
+  include "footer.php";
+} else {
+  header("location:../index.html");
+}
 ?>

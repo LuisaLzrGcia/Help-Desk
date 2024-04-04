@@ -7,7 +7,8 @@ if (session_status() !== PHP_SESSION_ACTIVE)
   integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <link rel="stylesheet" href="../../public/CSS/menu.css">
 <link rel="stylesheet" href="../../public/CSS/plantilla.css">
-<link rel="stylesheet" href="../public/datatable/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="../../public/datatable/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="../../public/datatable/responsive.bootstrap4.min.css">
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light static-top mb-5 shadow">
   <div class="container">

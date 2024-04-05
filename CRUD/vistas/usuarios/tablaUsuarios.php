@@ -35,12 +35,12 @@ $respuesta = mysqli_query($conexion, $sql); // Ejecutar la consulta SQL
             <th>Apellido paterno</th>
             <th>Apellido materno</th>
             <th>Nombre</th>
-            <th>Edad</th>
+            <th>Fecha de Nacimiento</th>
             <th>Sexo</th>
-            <th>Telefono</th>
+            <th>Teléfono</th>
             <th>Correo</th>
             <th>Usuario</th>
-            <th>Ubicacion</th>
+            <th>Ubicación</th>
             <th>Reset Password</th>
             <th>Cambiar Rol</th>
             <th>Activar</th>
@@ -80,31 +80,17 @@ $respuesta = mysqli_query($conexion, $sql); // Ejecutar la consulta SQL
                 <td>
                     <?php echo $mostrar['ubicacion']; ?>
                 </td>
+                <td><button class="btn btn-success btn-sm">Cambiar Password</button></td>
+                <td><button class="btn btn-primary btn-sm">Cambiar Rol</button></td>
                 <td>
-                    <button class="btn btn-success btn-sm">Cambiar Password</button>
-                </td>
-                <td>
-                    <button class="btn btn-primary btn-sm">Cambiar Rol</button>
-                </td>
-                <td>
-                    <?php
-                    if ($mostrar['estatus'] == 1) {
-                        ?>
+                    <?php if ($mostrar['estatus'] == 1) { ?>
                         <button class="btn btn-warning btn-sm">Activo</button>
-                        <?php
-                    } else {
-                        ?>
+                    <?php } else { ?>
                         <button class="btn btn-warning btn-sm">Inactivo</button>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
                 </td>
-                <td>
-                    <button class="btn btn-warning btn-sm">Editar</button>
-                </td>
-                <td>
-                    <button class="btn btn-danger btn-sm">Eliminar</button>
-                </td>
+                <td><button class="btn btn-warning btn-sm">Editar</button></td>
+                <td><button class="btn btn-danger btn-sm">Eliminar</button></td>
             </tr>
         <?php } ?>
     </tbody>
@@ -112,7 +98,6 @@ $respuesta = mysqli_query($conexion, $sql); // Ejecutar la consulta SQL
 
 <script>
     $(document).ready(function () {
-        $('#tablaUsuariosDataTable').DataTable({
-        });
+        $('#tablaUsuariosDataTable').DataTable();
     });
 </script>

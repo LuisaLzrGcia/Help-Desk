@@ -27,7 +27,7 @@ class Usuarios
         }
     }
 
-    public function agregarNuevoUsuarios($datos)
+    public function agregarNuevoUsuario($datos)
     {
         $conexion = Conexion::conectar(); // Suponiendo que esto devuelve una instancia válida de conexión
 
@@ -68,4 +68,4 @@ class Usuarios
         }
     }
 }
-?>
+

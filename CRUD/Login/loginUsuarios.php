@@ -11,7 +11,7 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
     include ("../Clases/Usuarios.php");
 
     // // Instanciar la clase Usuarios
-    $Usuarios = new Usuarios();
+    $Usuarios = new Usuarios ();
 
     // // Intentar iniciar sesión
     $login_result = $Usuarios->loginUsuarios($usuario, $password);
@@ -30,4 +30,3 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
     // Manejar el caso en que los datos del formulario no se hayan enviado correctamente
     echo "Error: Datos de inicio de sesión no recibidos correctamente.";
 }
-?>

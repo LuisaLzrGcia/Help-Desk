@@ -10,6 +10,5 @@ desplegara.
 
 NINGUNA SE MUESTRA EN PANTALLA :C
 
-FUNCIONES A AGREGAR.
-
-Se plantea agregar el funciomiento de los botones de tablaUsuarios
+Se agrego el funcionamiento al boton de agregar usuarios haciendo uso de los archivos
+Usuarios.php , usuarios.js, agregarUsuarios y tablaUsuarios.php si no mal recuerdo 

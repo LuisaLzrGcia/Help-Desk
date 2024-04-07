@@ -1,5 +1,5 @@
 <?php
-include_once "../Conexion.php"; // Agregar "once" para evitar problemas de inclusión múltiple.
+include "../Conexion.php"; // Agregar "once" para evitar problemas de inclusión múltiple.
 
 class Usuarios
 {
@@ -13,7 +13,6 @@ class Usuarios
 
         $sql = "SELECT * FROM t_usuarios 
                 WHERE usuario = '$usuario' AND password = '$password'";
-        //echo '<script>alert("' . $sql . '")</script>';
         $respuesta = mysqli_query($conexion, $sql);
 
         if ($respuesta && mysqli_num_rows($respuesta) > 0) {
@@ -29,43 +28,50 @@ class Usuarios
 
     public function agregarNuevoUsuario($datos)
     {
-        $conexion = Conexion::conectar(); // Suponiendo que esto devuelve una instancia válida de conexión
+        global $conexion;
 
-        if ($conexion) {
-            $idPersona = $this->agregarPersona($datos); // Llamada al método para agregar una persona
+        // Preparar la consulta SQL para insertar un nuevo usuario
+        $query = "INSERT INTO t_usuarios (id_rol, id_persona, usuario, password, ubicacion) VALUES (?, ?, ?, ?, ?)";
 
-            if ($idPersona > 0) {
-                $sql = "INSERT INTO t_usuario (id_rol, id_persona, usuario, password, ubicacion) 
-                        VALUES (?, ?, ?, ?, ?)";
-                $query = $conexion->prepare($sql);
-                $query->bind_param("iisss", $datos['idRol'], $idPersona, $datos['usuario'], $datos['password'], $datos['ubicacion']);
-                $respuesta = $query->execute();
-                $query->close();
-                return $respuesta;
-            } else {
-                return false;
-            }
+        // Preparar la sentencia
+        $stmt = $conexion->prepare($query);
+        if (!$stmt) {
+            return "Error al preparar la consulta: " . $conexion->error;
+        }
+
+        // Extraer datos del array $datos
+        $idRol = $datos['idRol'];
+        // Aquí puedes extraer los demás datos necesarios
+
+        // Ejecutar la consulta
+        $stmt->bind_param("iisss", $idRol, /* Aquí otros parámetros */);
+        $result = $stmt->execute();
+
+        if ($result) {
+            // Redirigir a inicio.php
+            header("Location: ../vistas/usuarios.php");
+            exit(); // Importante para detener la ejecución después de la redirección
         } else {
-            return false;
+            return "Error al agregar el usuario: " . $conexion->error;
         }
     }
 
-    public function agregarPersona($datos)
-    {
-        $conexion = Conexion::conectar(); // Suponiendo que esto devuelve una instancia válida de conexión
+    // public function agregarPersona($datos)
+    // {
+    //     global $conexion;
 
-        if ($conexion) {
-            $sql = "INSERT INTO t_persona (paterno, materno, nombre, fecha_nacimiento, sexo, telefono, correo) 
-                    VALUES (?, ?, ?, ?, ?, ?, ?)";      
-            $query = $conexion->prepare($sql);
-            $query->bind_param("sssssss", $datos['paterno'], $datos['materno'], $datos['nombre'], $datos['fechaNacimiento'], $datos['sexo'], $datos['telefono'], $datos['correo']);
-            $respuesta = $query->execute();
-            $idPersona = $query->insert_id();
-            $query->close();
-            return $idPersona;
-        } else {
-            return false;
-        }
-    }
+    //     if ($conexion) {
+    //         $sql = "INSERT INTO t_persona (paterno, materno, nombre, fecha_nacimiento, sexo, telefono, correo) 
+    //                 VALUES (?, ?, ?, ?, ?, ?, ?)";
+    //         $query = $conexion->prepare($sql);
+    //         $query->bind_param("sssssss", $datos['paterno'], $datos['materno'], $datos['nombre'], $datos['fechaNacimiento'], $datos['sexo'], $datos['telefono'], $datos['correo']);
+    //         $respuesta = $query->execute();
+    //         $idPersona = $query->insert_id();
+    //         $query->close();
+    //         return $idPersona;
+    //     } else {
+    //         return false;
+    //     }
+    // }
 }
 

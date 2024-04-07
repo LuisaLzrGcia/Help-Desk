@@ -1,5 +1,5 @@
 <!-- Modal -->
-<form id="frmAgregarUsuario" method="POST" onsubmit="return agregarNuevoUsuario()">
+<form id="frmAgregarUsuario" method="POST" action="../../../../Help-Desk/CRUD/vistas/usuarios/agregarNuevoUsuario.php">
   <!-- Modal -->
   <div class="modal fade" id="modalAgregarUsuarios" tabindex="-1" role="dialog"
     aria-labelledby="modalAgregarUsuariosLabel" aria-hidden="true">
@@ -76,7 +76,7 @@
         </div>
         <div class="modal-footer">
           <span class="btn btn-secondary" data-dismiss="modal">Cerrar</span>
-          <button class="btn btn-primary">Agregar</button>
+          <button type="submit" class="btn btn-primary">Agregar</button>
         </div>
       </div>
     </div>

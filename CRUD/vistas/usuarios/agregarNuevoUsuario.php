@@ -19,7 +19,7 @@ if (isset($_POST['paterno'], $_POST['materno'], $_POST['nombre'], $_POST['fechaN
   );
 
   // Incluir el archivo de la clase Usuarios
-  include "../usuarios.php";
+  include "../../Clases/Usuarios.php";
 
   // Crear una instancia de la clase Usuarios
   $Usuarios = new Usuarios();

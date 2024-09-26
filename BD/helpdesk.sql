@@ -1,1 +1,0 @@
-SELECT * FROM helpdesk.t_usuarios;

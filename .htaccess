@@ -1,8 +1,0 @@
-RewriteEngine On
-RewriteBase /Help-Desk/
-
-# Redirige "/login" a "/index.html"
-RewriteRule ^login$ index.html [L]
-
-# Redirige "/home" a "/CRUD/vistas/inicio.php"
-RewriteRule ^home$ CRUD/vistas/inicio.php [L]
